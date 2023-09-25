@@ -8,26 +8,16 @@ The order of the words doesn't change, just the letters of each word
 Expected results
 "This is a string of words" ----> "siht si a gnirts fo sdrow" */
 
-function reverseWord(word){
-    word=word.trim();
-    let reversed="";
-    let arr=[];
-    let tempStr="";
-    for(let i=0;i<word.length;i++){
-        if(word.charAt(i)!=" "){
-            let end=false;
-
-        }else{
-            tempStr+=word.charAt(i)
-        }
+function reverseWord(sentence){
+    let words=sentence.split(" ");
+    let word=[];
+    let finalSentence="";
+    for(let i=0;i<words.length;i++){
+        word=words[i].split("");
+        word=word.toReversed();
+        finalSentence+=word.join("")+" ";
     }
-
-    return reversed;
+    return finalSentence;
 }
 
-//loop1 
-
-// if ==space --> copy, else // op2
-
-//op2 
-// to array -> array.reverse  , tempStr=arr.join, , reversed=reverse.concat(tempSStr);  
+console.log(reverseWord("This is a string of words"));
